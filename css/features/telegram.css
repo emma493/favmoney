@@ -1,7 +1,6 @@
-/* css/features/telegram.css — sidebar Telegram button.
- * Ported from refs/shortieshub_app_fix/style.css:750-853 + index.html:117-128.
- * Glowing 3D badge + alternating Join/Telegram text. Button-only scope
- * (no tg-popup-overlay / tracker logic). */
+/* css/features/telegram.css — sidebar WhatsApp button (reuses telegram-*
+ * hooks). Green badge + white glyph + alternating Let's/Chat text.
+ * Button-only scope (no popup overlay / tracker logic). */
 
 /* --- Glowing 3D Telegram Button & Alternating Text --- */
 .action-btn.telegram-btn {
@@ -13,7 +12,7 @@
     margin-top: 2px;
 }
 
-/* Plain Telegram glyph, no wrapper: the icon itself shows, no green badge. */
+/* Plain WhatsApp glyph on its green badge: the icon itself shows. */
 .telegram-icon-badge {
     position: relative;
     width: auto;
@@ -47,7 +46,7 @@
     }
 }
 
-/* --- Animated Alternating Text ("Join" <-> "Telegram") --- */
+/* --- Animated Alternating Text ("Let's" <-> "Chat") --- */
 .telegram-text-switcher {
     position: relative;
     height: 14px;
