@@ -13,9 +13,9 @@
 const BOT_RE =
   /twitterbot|facebookexternalhit|facebookcatalog|facebot|linkedinbot|slackbot|telegrambot|whatsapp|discordbot|applebot|googlebot|bingbot|bytespider|embedly|quora link preview|showyoubot|outbrain|pinterest|tumblr/i;
 
-const PROJECT_ID = 'shortxx-live';
+const PROJECT_ID = 'shortxx-app';
 // Public browser API key (same as Admin bundle). Rules-gated, not secret.
-const FIRESTORE_KEY = 'AIzaSyBQoIKWaWPKg8luwCjpN8LPaTd-43A1Vqo';
+const FIRESTORE_KEY = 'AIzaSyAcmxtdjT80jKyq4vuC0z6sd9AfS2zGE0w';
 const META_URL =
   `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)` +
   `/documents/site_config/og_preview?key=${FIRESTORE_KEY}&mask.fieldPaths=imageUrl`;

@@ -11,10 +11,10 @@
 // inline (`imageData` dataURL) — those are still served directly.
 // Fallback: if the doc is missing/unreadable, serve the static logo.png.
 
-const PROJECT_ID = 'shortxx-live';
+const PROJECT_ID = 'shortxx-app';
 // Public browser API key (same one shipped in the Admin bundle + readable by
 // anyone). Access is gated by firestore.rules, not by key secrecy.
-const FIRESTORE_KEY = 'AIzaSyBQoIKWaWPKg8luwCjpN8LPaTd-43A1Vqo';
+const FIRESTORE_KEY = 'AIzaSyAcmxtdjT80jKyq4vuC0z6sd9AfS2zGE0w';
 const DOC_URL =
   `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)` +
   `/documents/site_config/og_preview?key=${FIRESTORE_KEY}`;

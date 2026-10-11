@@ -2,21 +2,21 @@ import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/12.19
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
 import { getFirestore, initializeFirestore, collection, getDocs, query, where, limit, startAfter, doc, getDoc, setDoc, updateDoc, increment, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-// Firebase Configuration (project: shortxx-live)
+// Firebase Configuration (project: shortxx-app)
 const firebaseConfig = {
-  apiKey: "AIzaSyBQoIKWaWPKg8luwCjpN8LPaTd-43A1Vqo",
-  authDomain: "shortxx-live.firebaseapp.com",
-  projectId: "shortxx-live",
-  storageBucket: "shortxx-live.firebasestorage.app",
-  messagingSenderId: "820851084501",
-  appId: "1:820851084501:web:5965dc2eabf120f710265c",
-  measurementId: "G-G211R5K286"
+  apiKey: "AIzaSyAcmxtdjT80jKyq4vuC0z6sd9AfS2zGE0w",
+  authDomain: "shortxx-app.firebaseapp.com",
+  projectId: "shortxx-app",
+  storageBucket: "shortxx-app.firebasestorage.app",
+  messagingSenderId: "533200613394",
+  appId: "1:533200613394:web:90313909fd25237942a8cb",
+  measurementId: "G-9MZN5BXC0X"
 };
 
 // Initialize Firebase App
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
-// Firebase Analytics (measurementId G-G211R5K286) — guarded: ad-blockers
+// Firebase Analytics (measurementId G-9MZN5BXC0X) — guarded: ad-blockers
 // or unsupported environments must never break video playback.
 try {
   getAnalytics(app);

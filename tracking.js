@@ -3,13 +3,13 @@
  */
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBQoIKWaWPKg8luwCjpN8LPaTd-43A1Vqo",
-  authDomain: "shortxx-live.firebaseapp.com",
-  projectId: "shortxx-live",
-  storageBucket: "shortxx-live.firebasestorage.app",
-  messagingSenderId: "820851084501",
-  appId: "1:820851084501:web:5965dc2eabf120f710265c",
-  measurementId: "G-G211R5K286",
+  apiKey: "AIzaSyAcmxtdjT80jKyq4vuC0z6sd9AfS2zGE0w",
+  authDomain: "shortxx-app.firebaseapp.com",
+  projectId: "shortxx-app",
+  storageBucket: "shortxx-app.firebasestorage.app",
+  messagingSenderId: "533200613394",
+  appId: "1:533200613394:web:90313909fd25237942a8cb",
+  measurementId: "G-9MZN5BXC0X",
 };
 
 (function loadFirebaseSDKs() {
@@ -35,7 +35,7 @@ const firebaseConfig = {
 function initFirebase() {
   let app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
   
-  // Default Firestore database instance (project: shortxx-live)
+  // Default Firestore database instance (project: shortxx-app)
   const db = app.firestore();
 
   window.shortxxDb = db;

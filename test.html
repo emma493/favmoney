@@ -44,10 +44,15 @@
         return;
       }
       log("fetching video list...");
-      fetch("https://firestore.googleapis.com/v1/projects/shortxx-live/databases/(default)/documents/videos?pageSize=5&key=AIzaSyBQoIKWaWPKg8luwCjpN8LPaTd-43A1Vqo")
+      fetch("https://firestore.googleapis.com/v1/projects/shortxx-app/databases/(default)/documents/videos?pageSize=5&key=AIzaSyAcmxtdjT80jKyq4vuC0z6sd9AfS2zGE0w")
         .then(function (res) {
           log("list HTTP " + res.status + " in " + (Date.now() - t0) + "ms", res.ok ? "ok" : "bad");
-          if (!res.ok) throw new Error("list status " + res.status);
+          if (!res.ok) {
+            return res.text().then(function (body) {
+              log("error body: " + body.slice(0, 2000), "bad");
+              throw new Error("list status " + res.status);
+            });
+          }
           return res.json();
         })
         .then(function (json) {
