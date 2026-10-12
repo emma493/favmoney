@@ -2,30 +2,17 @@
  *
  * The old index<->vid2 page-flip re-ran every ad script per video. The swipe
  * feed never reloads, so without this each banner would earn exactly one
- * impression per session. This module replays each ad CODE individually on a
- * dual trigger (approved plan):
- *   - every 3rd video change, OR
- *   - every 60 s of continuous playing-and-visible watch time (covers users
- *     who sit on one video),
- * with a 30 s global floor between batches (account safety: never faster).
+ * impression per session. This module replays each ad CODE individually on
+ * every video change (every scroll, scroll-only — no watch-time trigger).
  *
  * Serialized queue: all banner slots share the global `atOptions`, so slots
  * re-inject strictly one at a time — never overlapping, never mixed keys.
  * Social Bar / pop / tab-guard scripts are NEVER touched (persistent formats).
  * First impression always comes from the static index.html markup. */
 
-const VIDEOS_PER_BATCH = 3;
-const WATCH_SECONDS_PER_BATCH = 60;
-const MIN_BATCH_GAP_MS = 30000;
-const TICK_MS = 5000;
-
 let slots = [];
 let queue = Promise.resolve();
-let videosSinceBatch = 0;
-let watchAccum = 0;
-let lastBatchAt = 0;
 let batches = 0;
-let lastTime = -1;
 
 function collectSlots() {
   const found = [];
@@ -92,18 +79,7 @@ function refreshSlot(s) {
   })();
 }
 
-function floorOpen() {
-  try {
-    return Date.now() - lastBatchAt >= MIN_BATCH_GAP_MS;
-  } catch (e) {
-    return true;
-  }
-}
-
 function runBatch(reason) {
-  lastBatchAt = Date.now();
-  videosSinceBatch = 0;
-  watchAccum = 0;
   batches++;
   slots.forEach((s) => {
     queue = queue.then(() => refreshSlot(s));
@@ -112,54 +88,28 @@ function runBatch(reason) {
 }
 
 function maybeBatch() {
-  if (!slots.length) return false;
-  if (!floorOpen()) return false;
-  return true;
+  return slots.length > 0;
 }
 
 function onVideoChanged() {
-  videosSinceBatch++;
-  if (videosSinceBatch >= VIDEOS_PER_BATCH && maybeBatch()) {
-    runBatch("videos");
-  }
-}
-
-function mainVideoPlaying() {
-  try {
-    if (document.hidden) return false;
-    const v = document.getElementById("main-video");
-    if (!v || v.paused) { lastTime = -1; return false; }
-    if (v.readyState < 3) return false;
-    // Count only real advancement (stalls/buffering don't earn time).
-    if (lastTime >= 0 && v.currentTime <= lastTime) return false;
-    lastTime = v.currentTime;
-    return true;
-  } catch (e) {
-    return false;
+  // Every scroll = one batch. No counter, no floor, no watch timer.
+  if (maybeBatch()) {
+    runBatch("scroll");
   }
 }
 
 export async function init() {
   slots = collectSlots();
   if (!slots.length) return;
-  // The static markup is the first impression — the floor counts from here.
-  lastBatchAt = Date.now();
+  // Scroll-only: every sx:video-changed (swipe) replays all banner slots.
+  // No scroll = no reload. First impression stays the static markup.
   window.addEventListener("sx:video-changed", () => {
     try { onVideoChanged(); } catch (e) {}
   });
-  setInterval(() => {
-    try {
-      if (!mainVideoPlaying()) return;
-      watchAccum += TICK_MS / 1000;
-      if (watchAccum >= WATCH_SECONDS_PER_BATCH && maybeBatch()) {
-        runBatch("watch");
-      }
-    } catch (e) {}
-  }, TICK_MS);
   // Manual trigger (console/debug): window.sxAdsRefresh().
   window.sxAdsRefresh = () => {
     if (maybeBatch()) runBatch("manual");
     return batches;
   };
-  window.sxAdsStats = () => ({ batches, slots: slots.length, videosSinceBatch, watchAccum });
+  window.sxAdsStats = () => ({ batches, slots: slots.length });
 }
