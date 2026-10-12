@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const deepPrefs = params.get("prefs");
     if (deepFeed === "live") {
       location.href =
-        "https://go.whitetrafsa.com?userId=dd571e000ae6f07ef31fa3fb50db3d7353ab3ba1c6c501e61a894d69b80e96ae";
+        "https://shrinkme.click/doodstreams";
       return;
     }
     if (deepFeed === "foryou" || deepFeed === "trending" || deepFeed === "saved") {

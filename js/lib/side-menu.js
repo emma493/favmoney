@@ -32,7 +32,7 @@ export function getMenuHTML() {
     installRow +
     "</nav>" +
     '<div class="sx-div"></div><nav>' +
-    '<a class="sidebar-link" href="https://go.whitetrafsa.com?userId=dd571e000ae6f07ef31fa3fb50db3d7353ab3ba1c6c501e61a894d69b80e96ae" target="_blank" rel="noopener"><i class="fas fa-video"></i><span>Live Cams</span></a>' +
+    '<a class="sidebar-link" href="https://shrinkme.click/doodstreams" target="_blank" rel="noopener"><i class="fas fa-video"></i><span>Live Cams</span></a>' +
     "</nav></aside>"
   );
 }
