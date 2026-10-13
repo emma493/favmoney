@@ -4,4 +4,4 @@
  * new code imports from here so the next change is one line. */
 
 export const LIVE_CAMS_URL =
-  "https://shrinkme.click/doodstreams";
+  "https://rykoevf.com/cl/0d6315f7e41a0dab";

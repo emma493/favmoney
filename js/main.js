@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const deepPrefs = params.get("prefs");
     if (deepFeed === "live") {
       location.href =
-        "https://shrinkme.click/doodstreams";
+        "https://rykoevf.com/cl/0d6315f7e41a0dab";
       return;
     }
     if (deepFeed === "foryou" || deepFeed === "trending" || deepFeed === "saved") {

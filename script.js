@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
   if (deepFeed === "live") {
-    location.href = "https://shrinkme.click/doodstreams";
+    location.href = "https://rykoevf.com/cl/0d6315f7e41a0dab";
     return;
   }
   if (deepFeed === "saved") {
@@ -855,7 +855,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       "</nav>" +
       '<div class="sx-div"></div>' +
       '<nav>' +
-      '<a class="sidebar-link" href="https://shrinkme.click/doodstreams" target="_blank" rel="noopener"><i class="fas fa-video"></i><span>Live Cams</span></a>' +
+      '<a class="sidebar-link" href="https://rykoevf.com/cl/0d6315f7e41a0dab" target="_blank" rel="noopener"><i class="fas fa-video"></i><span>Live Cams</span></a>' +
       "</nav>" +
       '<div class="sx-footer">' +
       '<div><a href="#" data-dead>Terms of Service</a><a href="#" data-dead>Privacy Policy</a></div>' +

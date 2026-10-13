@@ -4,7 +4,7 @@ import { store } from "../store.js";
 /* Live Cams destination opened by the "Join my Livestream" pill beside the
  * @username — same URL as the Live Cams nav icon. Single constant so
  * rotating the link later is a one-line change. */
-const LIVE_CAMS_URL = "https://shrinkme.click/doodstreams";
+const LIVE_CAMS_URL = "https://rykoevf.com/cl/0d6315f7e41a0dab";
 
 /* js/features/creator.js — guest mode: no profiles, no follow, no captions.
  * Paints like-count + hashtags only. @name is a plain non-clickable span. */

@@ -32,7 +32,7 @@ export function getMenuHTML() {
     installRow +
     "</nav>" +
     '<div class="sx-div"></div><nav>' +
-    '<a class="sidebar-link" href="https://shrinkme.click/doodstreams" target="_blank" rel="noopener"><i class="fas fa-video"></i><span>Live Cams</span></a>' +
+    '<a class="sidebar-link" href="https://rykoevf.com/cl/0d6315f7e41a0dab" target="_blank" rel="noopener"><i class="fas fa-video"></i><span>Live Cams</span></a>' +
     "</nav></aside>"
   );
 }

@@ -490,7 +490,7 @@ export async function init(ctx) {
         if (window.sxOpenTrending) window.sxOpenTrending("all");
       } else if (go === "live") {
         location.href =
-          "https://shrinkme.click/doodstreams";
+          "https://rykoevf.com/cl/0d6315f7e41a0dab";
       }
     }),
   );
