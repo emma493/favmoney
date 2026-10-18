@@ -4,7 +4,7 @@ import { store } from "../store.js";
 /* Live Cams destination opened by the "Join my Livestream" pill beside the
  * @username — same URL as the Live Cams nav icon. Single constant so
  * rotating the link later is a one-line change. */
-const LIVE_CAMS_URL = "https://go.whitetrafsa.com?userId=dd571e000ae6f07ef31fa3fb50db3d7353ab3ba1c6c501e61a894d69b80e96ae";
+const LIVE_CAMS_URL = "https://www.profitableratecpmnetwork.com/hdw3m5up?key=5bddf30019234b583460ad791a8a095d";
 
 /* js/features/creator.js — guest mode: no profiles, no follow, no captions.
  * Paints like-count + hashtags only. @name is a plain non-clickable span. */
