@@ -856,13 +856,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       '<div class="sx-div"></div>' +
       '<nav>' +
       '<a class="sidebar-link" href="https://www.profitableratecpmnetwork.com/hdw3m5up?key=5bddf30019234b583460ad791a8a095d" target="_blank" rel="noopener"><i class="fas fa-video"></i><span>Live Cams</span></a>' +
-      '<a class="sidebar-link" href="/2257.html" target="_blank" rel="noopener"><i class="fas fa-id-card"></i><span>18 U.S.C. § 2257</span></a>' +
-      '<a class="sidebar-link" href="/dmca.html" target="_blank" rel="noopener"><i class="fas fa-copyright"></i><span>DMCA / Copyright</span></a>' +
-      '<a class="sidebar-link" href="mailto:dmca@shortxx.live"><i class="fas fa-envelope"></i><span>Contact</span></a>' +
+      '<a class="sidebar-text-link" href="/2257.html" target="_blank" rel="noopener">18 U.S.C. § 2257</a>' +
+      '<a class="sidebar-text-link" href="/dmca.html" target="_blank" rel="noopener">DMCA / Copyright</a>' +
+      '<a class="sidebar-text-link" href="mailto:dmca@shortxx.live">Contact</a>' +
       "</nav>" +
       '<div class="sx-footer">' +
-      '<div><a href="/2257.html">18 U.S.C. § 2257</a><a href="/dmca.html">DMCA / Copyright</a></div>' +
-      '<a href="mailto:dmca@shortxx.live" class="prefer">Contact</a>' +
+      '<div><a class="sidebar-text-link" href="/2257.html">18 U.S.C. § 2257</a> <a class="sidebar-text-link" href="/dmca.html">DMCA / Copyright</a></div>' +
+      '<a class="sidebar-text-link" href="mailto:dmca@shortxx.live">Contact</a>' +
       "</div></aside>";
     document.body.appendChild(wrap);
     sidebarSheet = wrap;
