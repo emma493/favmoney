@@ -23,13 +23,11 @@ const FEATURES = [
   "ads",
   "creator",
   "guide",
-  "prefs",
   "telemetry",
   "likes",
   "discover",
   "menu",
   "install",
-  "feed",
   "trending",
   "mute",
   "share",
@@ -62,11 +60,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // 0. PWA shortcut deep links (?feed=...) — same behavior as before split.
   // Declared outside try: read again after features boot below.
-  let wantsPrefs = false;
   try {
     const params = new URLSearchParams(location.search);
     const deepFeed = params.get("feed");
-    const deepPrefs = params.get("prefs");
     if (deepFeed === "live") {
       location.href =
         "https://www.profitableratecpmnetwork.com/hdw3m5up?key=5bddf30019234b583460ad791a8a095d";
@@ -76,16 +72,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       const u = new URL(location.href);
       u.searchParams.delete("feed");
       try {
-        history.replaceState(null, "", u.pathname + u.search + u.hash);
-      } catch (e) {}
-    }
-    // Side-menu Preferences from folder pages (?prefs=1): strip the param
-    // now, open the popup after features boot below.
-    if (deepPrefs === "1") {
-      wantsPrefs = true;
-      try {
-        const u = new URL(location.href);
-        u.searchParams.delete("prefs");
         history.replaceState(null, "", u.pathname + u.search + u.hash);
       } catch (e) {}
     }
@@ -285,11 +271,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       } catch (err) {}
     }
   });
-  if (wantsPrefs) {
-    try {
-      if (window.sxOpenPrefs) window.sxOpenPrefs(true);
-    } catch (e) {}
-  }
   await load;
   // Late-feature heal: prefs/guide/discover/trending/player all init AFTER
   // the early boot sx:videos-ready above, so their listeners miss it and the

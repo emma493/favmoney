@@ -28,7 +28,6 @@ export function getMenuHTML() {
     '<button class="sidebar-link" data-go="home"><i class="fas fa-home"></i><span>Home</span></button>' +
     '<button class="sidebar-link" data-go="discover"><i class="fas fa-compass"></i><span>Discover</span></button>' +
     '<button class="sidebar-link" data-go="trending"><i class="fas fa-fire"></i><span>Trending</span></button>' +
-    '<button class="sidebar-link" data-act="preferences"><i class="fas fa-sliders-h"></i><span>Preferences</span></button>' +
     installRow +
     "</nav>" +
     '<div class="sx-div"></div><nav>' +
@@ -91,20 +90,7 @@ export function wireMenu(root, deps) {
       } catch (e) {}
     });
   }
-  // Preferences row: opens the content-preference popup on the feed; from
-  // folder pages (no prefs module loaded) hop to the feed which opens it.
-  const prefsEl = root.querySelector('[data-act="preferences"]');
-  if (prefsEl) {
-    prefsEl.addEventListener("click", () => {
-      close();
-      setTimeout(() => {
-        try {
-          if (window.sxOpenPrefs) window.sxOpenPrefs(true);
-          else location.href = "/index.html?prefs=1";
-        } catch (e) {}
-      }, 60);
-    });
-  }
+
 }
 
 /* Build + attach a hidden drawer clone inside a given parent (overlay root

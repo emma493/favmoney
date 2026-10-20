@@ -6,9 +6,9 @@
  * never re-prompted. Storage access is guarded: sandboxed WebViews that
  * throw on localStorage simply show the overlay per visit.
  *
- * First-visit sequence: prefs popup -> tutorial -> straight into the
- * For You feed (the default). The tutorial waits for the prefs popup to
- * close instead of firing on a blind timer, so the two never overlap. */
+ * First-visit sequence: tutorial -> straight into the girls-only For You
+ * feed (the default). The tutorial shows once the feed has content on a
+ * first visit. */
 
 const FLAG = "hasSeenSwipeTutorial";
 const SHOW_DELAY_MS = 400;
@@ -74,17 +74,11 @@ export async function init() {
     if (e.key === "ArrowDown" || e.key === "ArrowUp") handleAction();
   });
 
-  // Prefs already chosen (or no prefs module): run once the feed has content.
+  // No preferences popup anymore: show the swipe tutorial once the feed has
+  // content on first visit.
   window.addEventListener("sx:videos-ready", () => {
     try {
       if (seen()) return;
-      if (prefsChosen()) show();
-      // Otherwise wait for the popup to close (sx:prefs-closed below).
-    } catch (e) {}
-  });
-  // Popup closed (chosen or dismissed) -> tutorial goes next.
-  window.addEventListener("sx:prefs-closed", () => {
-    try {
       show();
     } catch (e) {}
   });
