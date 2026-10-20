@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YGPQ8QW0P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2YGPQ8QW0P');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Join My Livestream</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        @media (min-width: 1024px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #000;
+            }
+            .app-container {
+                height: 100vh;
+                aspect-ratio: 9 / 16;
+                position: relative;
+                overflow: hidden;
+                background-color: #000;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .app-container {
+                width: 100vw;
+                height: 100vh;
+                height: 100dvh;
+                position: relative;
+                overflow: hidden;
+                background-color: #000;
+            }
+        }
+
+        /* Top Left Floating Logo Styling */
+        .top-left-logo {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 140px;
+            height: auto;
+            z-index: 40;
+            pointer-events: none;
+            filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.7));
+        }
+
+        @media (max-width: 1023px) {
+            .top-left-logo {
+                top: calc(16px + env(safe-area-inset-top, 0px));
+                left: calc(16px + env(safe-area-inset-left, 0px));
+                width: 120px;
+            }
+        }
+
+        .video-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .bottom-action-bar {
+            position: absolute;
+            bottom: 24px;
+            left: 0;
+            width: 100%;
+            z-index: 30;
+            pointer-events: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 0 16px;
+        }
+
+        @media (max-width: 1023px) {
+            .bottom-action-bar {
+                bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+            }
+        }
+
+        .promo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 2px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+        }
+
+        .promo-line {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-align: center;
+            line-height: 1.15;
+            letter-spacing: 0.5px;
+        }
+
+        .promo-line.line-top {
+            color: #ffffff;
+            font-size: clamp(16px, 5vw, 22px);
+        }
+
+        .promo-line.line-bottom {
+            color: #FF2E4C;
+            font-size: clamp(18px, 5.5vw, 24px);
+        }
+
+        /* Red Livestream Themed Call-To-Action Button */
+        .btn-subscribe {
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            max-width: 340px;
+            height: 52px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: clamp(15px, 4.2vw, 18px); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #FF0000 0%, #B30000 100%);
+            border: none;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.5);
+            transition: transform 0.15s ease, background-color 0.15s ease;
+            animation: live-pulse 1.8s infinite;
+        }
+
+        .btn-subscribe:active {
+            transform: scale(0.97);
+        }
+
+        /* Animated Video Play Icon Inside Button */
+        .live-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            flex-shrink: 0;
+            animation: live-shake 2.5s infinite ease-in-out;
+        }
+
+        @keyframes live-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 16px rgba(255, 0, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+
+        @keyframes live-shake {
+            0%, 100% { transform: scale(1); }
+            10%, 20% { transform: scale(1.15); }
+            15%, 25% { transform: scale(1.15); }
+            30% { transform: scale(1); }
+        }
+
+        video {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body data-page="ads" data-next="index.html" data-prev="index.html">
+
+    <div class="app-container">
+
+        <!-- Top Left Brand Overlay Logo -->
+        <img src="stripchat.png" alt="Stripchat Logo" class="top-left-logo">
+
+        <video id="stream-video" class="video-layer" playsinline autoplay loop></video>
+
+        <div class="bottom-action-bar">
+            
+            <div class="promo-text-wrapper">
+                <div class="promo-line line-top">STREAMING LIVE</div>
+                <div class="promo-line line-bottom">WATCH ME LIVE NOW</div>
+            </div>
+
+            <a href="https://shrinkme.click/doodstreams" target="_blank" rel="noopener noreferrer" class="btn-subscribe">
+                <svg class="live-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+                </svg>
+                WATCH NOW
+            </a>
+
+        </div>
+    </div>
+    
+<script type="module">
+    import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, query, where, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // 1. FIREBASE CONFIGURATION
+    const firebaseConfig = {
+      apiKey: "AIzaSyALnYVISQIb6jNBU9Sds00GLQNhGQ3y4wk",
+      authDomain: "intense-augury-28gvj.firebaseapp.com",
+      projectId: "intense-augury-28gvj",
+      storageBucket: "intense-augury-28gvj.firebasestorage.app",
+      messagingSenderId: "847124482953",
+      appId: "1:847124482953:web:35d42c09894f05891a2f58"
+    };
+
+    const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+    const DATABASE_ID = "ai-studio-shortxxadmindash-86192a98-919e-436c-80b9-836d96e0e32b";
+    const db = getFirestore(app, DATABASE_ID);
+
+    const baseVideo = document.getElementById('stream-video') || document.querySelector('video');
+
+    // 2. FETCH SINGLE VIDEO FROM VIDEOS COLLECTION & PLAY WITH AUDIO
+    async function loadVideosFromFirestore() {
+        try {
+            const videosRef = collection(db, "videos");
+            const q = query(videosRef, where("is_active", "==", true));
+            const querySnapshot = await getDocs(q);
+
+            let rawVideos = [];
+            querySnapshot.forEach((docSnap) => {
+                const data = docSnap.data();
+                if (data.direct_url) {
+                    rawVideos.push({
+                        id: docSnap.id,
+                        url: data.hls_url || data.direct_url
+                    });
+                }
+            });
+
+            if (rawVideos.length === 0) {
+                console.warn("No active videos found in Firestore.");
+                return;
+            }
+
+            // Pick one random video from the active database records
+            const selectedVideo = rawVideos[Math.floor(Math.random() * rawVideos.length)];
+            
+            // Set continuous video looping
+            baseVideo.loop = true;
+            baseVideo.src = selectedVideo.url;
+
+            // Increment view counter in Firestore
+            trackVideoView(selectedVideo.id);
+
+            // Play video unmuted with muted fallback for browser autoplay rules
+            baseVideo.muted = false;
+            baseVideo.play().catch(() => {
+                baseVideo.muted = true;
+                baseVideo.play().catch(() => {});
+            });
+
+        } catch (error) {
+            console.error("Error fetching videos from Firestore:", error);
+        }
+    }
+
+    // 3. INCREMENT VIEW COUNT IN VIDEOS COLLECTION
+    async function trackVideoView(videoId) {
+        try {
+            await updateDoc(doc(db, "videos", videoId), {
+                views: increment(1)
+            });
+        } catch (error) {
+            console.error("Error updating video view count:", error);
+        }
+    }
+
+    // 4. AUDIO UNLOCK FALLBACK HANDLER
+    const unlockAudio = () => {
+        if (baseVideo) baseVideo.muted = false;
+    };
+
+    ['click', 'touchstart', 'keydown'].forEach(evt => {
+        document.addEventListener(evt, unlockAudio, { once: true });
+    });
+
+    // 5. NAVIGATION & GESTURES (SWIPE / WHEEL)
+    function skipAd() {
+        const nextFile = document.body.dataset.next || 'index.html';
+        window.location.href = nextFile;
+    }
+
+    let startY = 0;
+
+    window.addEventListener('touchstart', (e) => {
+        startY = e.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener('touchend', (e) => {
+        let endY = e.changedTouches[0].clientY;
+        if (Math.abs(startY - endY) > 50) {
+            skipAd();
+        }
+    }, { passive: true });
+
+    window.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) > 15) {
+            skipAd();
+        }
+    }, { passive: true });
+
+    // Enforce Playback logic
+    const enforceVideoPlayback = () => {
+        if (baseVideo && baseVideo.paused && baseVideo.src) {
+            baseVideo.play().catch(() => {});
+        }
+    };
+
+    setInterval(enforceVideoPlayback, 300);
+    window.addEventListener('focus', enforceVideoPlayback);
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) enforceVideoPlayback();
+    });
+
+    // EXECUTION
+    loadVideosFromFirestore();
+</script>
+</body>
+</html>

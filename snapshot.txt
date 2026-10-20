@@ -1,0 +1,17 @@
+oc_sk_4512611c2bf6_WwcI8d5yC7sj92yQA2ofGzObw0ojbqKq
+▼Todo
+[✓] Strip Upload + Guides from 7 static asides
+[✓] Rebuild saved.html text aside to canonical sidebar
+[✓] Overlays: add Creators/Liked rows, drop Upload/Guides, wire routes
+[✓] Drawer: add rows + footer links + routing
+[✓] Verify all menus + checks
+[✓] Prefs menu text-only (Girls/Couples/All, no emojis)
+[✓] Admin: gitignore generated output, drop dup redirect, pushed e160fe2
+[✓] User site: SW v9 SWR, dead weight dropped, logs silenced, preview fixed, pushed a8f979c
+[✓] Speed: ad async, FA async, preconnects, thumb LRU, fetchpriority
+[✓] Headers: js/css/icons cache + security baseline, pushed 864cc55
+[✓] SEO leftovers: async ads all subpages, og/twitter images everywhere, per-creator h1, pushed f9bccf0
+[✓] Paged feed (25/page, play first, scroll pulls more), pushed a2a67f5
+[✓] Static sticky player rebuild (no reparenting), pushed c952cd9
+[✓] VERIFIED WORKING by user
+[✓] Creator profiles via /@ alias (any Firestore name), deploys green again

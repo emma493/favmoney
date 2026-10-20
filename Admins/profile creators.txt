@@ -1,0 +1,13 @@
+# Profile creators — paste one creator per line, then tell the Admin session.
+# Format per line:
+#   username <space> image-link
+# Example:
+#   elissecinnamon https://cdn2.nuditok.com/profile-photos/elissecinnamon.jpg
+#
+# Rules:
+# - username: 2-30 chars, letters/numbers/._- only.
+# - image-link: must start with http:// or https://
+# - girls only, adults 18+ only. Anything unverified stays OUT.
+#
+# When you paste new lines, the Admin session reads this file and creates
+# the matching creator accounts in Firestore (creators collection).

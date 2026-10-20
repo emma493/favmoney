@@ -1,0 +1,13 @@
+{
+  // Serve the shortxx.live/ folder itself as the web root so root-absolute
+  // URLs (/, /creator/<name>/, /discover/, /js/..., /ntok.css) resolve.
+  // Without this, Live Server rooted at the parent folder 404s every
+  // Unknown paths (e.g. /creator/<any-name>/ without a generated folder)
+  // are served the 404 shell, whose painter parses the creator name from
+  // the URL and renders the profile; genuine typos get its friendly
+  // not-found block instead. Restart Live Server (Go Offline -> Go Live)
+  // after changing this file.
+  "liveServer.settings.root": "/shortxx.live",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.file": "/404.html"
+}
