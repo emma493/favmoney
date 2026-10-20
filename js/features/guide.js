@@ -29,12 +29,9 @@ function markSeen() {
 }
 
 function prefsChosen() {
-  try {
-    const p = localStorage.getItem("shortxx_pref");
-    return p === "girls" || p === "couples" || p === "all";
-  } catch (e) {
-    return false;
-  }
+  // Girls always play; no preference system. Treat as already chosen so the
+  // swipe tutorial shows immediately without waiting.
+  return true;
 }
 
 export async function init() {

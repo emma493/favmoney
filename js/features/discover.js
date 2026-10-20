@@ -160,7 +160,7 @@ export async function init(ctx) {
   document.body.appendChild(wrap);
   sheet = wrap;
 
-  let filter = "all";
+  let filter = "girls";
   let allExpanded = false;
   const qEl = wrap.querySelector("[data-q]");
   const recentEl = wrap.querySelector("[data-recent]");
@@ -400,7 +400,7 @@ export async function init(ctx) {
     paintRecent();
     paintResults();
     const q = (qEl.value || "").trim();
-    if (!q && filter === "all") paintSections();
+    if (!q) paintSections();
     else sectionsEl.innerHTML = "";
   }
 

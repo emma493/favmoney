@@ -1,10 +1,10 @@
 import { getContentPreference, setContentPreference } from "../../vid.js";
 
-/* js/features/feed.js — guest category switcher: Girls / Couples / All.
- * Top-center button; choosing a category persists + repaints live (no reload). */
+/* js/features/feed.js — guest category switcher: For You (girls creators
+ * only). Top-center button; persisting + repaints live (no reload). */
 
-const NAMES = { girls: "Girls", couples: "Couples", all: "All" };
-const ORDER = ["girls", "couples", "all"];
+const NAMES = { girls: "For You" };
+const ORDER = ["girls"];
 
 function paintMenuChecks(menu) {
   if (!menu) return;
@@ -28,8 +28,10 @@ export async function init(ctx) {
 
   const paint = () => {
     const cur = getContentPreference();
-    if (feedLabel) feedLabel.textContent = NAMES[cur] || "All";
-    feedBtn.setAttribute("aria-label", "Change category, currently " + (NAMES[cur] || "All"));
+    if (feedLabel) feedLabel.textContent = NAMES[cur] || "For You";
+    feedBtn.setAttribute("aria-label", "Change category, currently " + (NAMES[cur] || "For You"));
+    feedBtn.setAttribute("aria-disabled", "true");
+    feedBtn.setAttribute("tabindex", "-1");
   };
   paint();
   window.addEventListener("sx:prefs-chosen", paint);
@@ -41,7 +43,7 @@ export async function init(ctx) {
     paint();
     paintMenuChecks(menu);
     try {
-      toast("Showing " + (NAMES[mode] || mode) + " videos");
+      toast("Showing " + (NAMES[mode] || "For You") + " videos");
     } catch (e) {}
     closeMenu();
     // Live switch: setContentPreference() rebuilt the pool + fired
@@ -111,8 +113,7 @@ export async function init(ctx) {
 
   feedBtn.addEventListener("click", (e) => {
     e.stopPropagation();
-    if (menu && menu.classList.contains("open")) closeMenu();
-    else openMenu();
+    // Disabled: category switcher is inactive (single option: For You)
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();

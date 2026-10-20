@@ -1,5 +1,5 @@
 # Netlify + Cloudflare Pages redirects. Publish directory must be the
-# shortxx.live/ folder itself so /ntok.css, /js/..., /discover/... resolve.
+# favmoney.site/ folder itself so /ntok.css, /js/..., /discover/... resolve.
 # Link-preview shim: every og:image site-wide points at /og-preview.png,
 # which 302s to the CURRENT baked thumbnail published from Admin → Photo.
 # On publish, replace the target URL below with the new Cloudinary link.

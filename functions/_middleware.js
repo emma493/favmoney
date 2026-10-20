@@ -30,7 +30,7 @@ const FIRESTORE_KEY = 'AIzaSyAcmxtdjT80jKyq4vuC0z6sd9AfS2zGE0w';
 const META_URL =
   `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)` +
   `/documents/site_config/og_preview?key=${FIRESTORE_KEY}&mask.fieldPaths=imageUrl`;
-const FALLBACK_IMG = 'https://shortxx.live/og-preview.png';
+const FALLBACK_IMG = 'https://favmoney.site/og-preview.png';
 
 function photoDocUrl(slug) {
   return (
@@ -122,7 +122,7 @@ function escapeHtml(s) {
 }
 
 function buildEpHtml(slug, imgUrl) {
-  const canonical = `https://shortxx.live/${slug}`;
+  const canonical = `https://favmoney.site/${slug}`;
   const title = escapeHtml(EP_TITLE);
   const desc = escapeHtml(EP_DESC);
   const img = escapeHtml(imgUrl);
@@ -141,7 +141,7 @@ function buildEpHtml(slug, imgUrl) {
     `<meta property="og:image:secure_url" content="${img}">` +
     `<meta property="og:image:width" content="1200">` +
     `<meta property="og:image:height" content="630">` +
-    `<meta property="og:site_name" content="Shortxx">` +
+    `<meta property="og:site_name" content="Favmoney">` +
     `<meta name="twitter:card" content="summary_large_image">` +
     `<meta name="twitter:title" content="${title}">` +
     `<meta name="twitter:description" content="${desc}">` +

@@ -25,7 +25,7 @@ const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const TEMPLATE = join(ROOT, "creator", "index.html");
 const SITEMAP = join(ROOT, "sitemap.xml");
 const CREATOR_DIR = join(ROOT, "creator");
-const SITE = "https://shortxx.live";
+const SITE = "https://favmoney.site";
 const VALID = /^[\w-]+$/;
 
 function profileUrl(name) {
@@ -34,43 +34,43 @@ function profileUrl(name) {
 
 function bake(template, name) {
   const url = profileUrl(name);
-  const title = `@${name} - Nude TikTok Videos | Shortxx`;
-  const desc = `Watch @${name}'s nude TikTok and adult TikTok videos on Shortxx.`;
+  const title = `@${name} - Short Videos | Favmoney`;
+  const desc = `Watch @${name}'s short videos on Favmoney.`;
   let out = template;
   out = out.replace(
     "<title>Creator | Shortxx</title>",
     `<title>${title}</title>\n  <!-- Generated for @${name} by tools/generate-creator-pages.mjs — do not hand-edit; edit creator/index.html + re-run. -->`
   );
   out = out.replace(
-    '<link rel="canonical" href="https://shortxx.live/creators">',
+    '<link rel="canonical" href="https://favmoney.site/creators">',
     `<link rel="canonical" href="${url}">`
   );
   out = out.replace(
-    '<meta name="description" content="Watch this creator\'s nude TikTok and adult TikTok videos on Shortxx.">',
+    '<meta name="description" content="Watch this creator\'s short videos on Favmoney.">',
     `<meta name="description" content="${desc}">`
   );
   out = out.replace(
-    '<meta property="og:title" content="Creator | Shortxx">',
+    '<meta property="og:title" content="Creator | Favmoney">',
     `<meta property="og:title" content="${title}">`
   );
   out = out.replace(
-    '<meta property="og:url" content="https://shortxx.live/creators">',
+    '<meta property="og:url" content="https://favmoney.site/creators">',
     `<meta property="og:url" content="${url}">`
   );
   out = out.replace(
-    '<meta name="twitter:title" content="Creator | Shortxx">',
+    '<meta name="twitter:title" content="Creator | Favmoney">',
     `<meta name="twitter:title" content="${title}">`
   );
   out = out.replace(
-    '<meta name="twitter:description" content="Watch this creator\'s videos on Shortxx.">',
+    '<meta name="twitter:description" content="Watch this creator\'s videos on Favmoney.">',
     `<meta name="twitter:description" content="${desc}">`
   );
   out = out.replace(
-    '<script type="application/ld+json" data-profile-json>{"@context":"https://schema.org","@type":"Person","name":"Shortxx creator","url":"https://shortxx.live/creators"}</script>',
+    '<script type="application/ld+json" data-profile-json>{"@context":"https://schema.org","@type":"Person","name":"Favmoney creator","url":"https://favmoney.site/creators"}</script>',
     `<script type="application/ld+json" data-profile-json>{"@context":"https://schema.org","@type":"Person","name":"${name}","alternateName":"@${name}","url":"${url}"}</script>`
   );
   out = out.replace(
-    '<h1 class="cp-name" data-profile-h1>Creator | Shortxx</h1>',
+    '<h1 class="cp-name" data-profile-h1>Creator | Favmoney</h1>',
     `<h1 class="cp-name" data-profile-h1>@${name}</h1>`
   );
   return out;
@@ -79,8 +79,8 @@ function bake(template, name) {
 function namesFromSitemap() {
   const xml = readFileSync(SITEMAP, "utf8");
   const names = [];
-  // Folder-style locs (canonical): https://shortxx.live/creator/<name>/
-  // Legacy alias locs: https://shortxx.live/@<name>
+  // Folder-style locs (canonical): https://favmoney.site/creator/<name>/
+  // Legacy alias locs: https://favmoney.site/@<name>
   const re = /<loc>\s*https?:\/\/[^/]+\/(?:creator\/([^<\s/]+)\/?|@([^<\s/]+))\s*<\/loc>/g;
   let m;
   while ((m = re.exec(xml))) {
