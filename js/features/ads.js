@@ -26,7 +26,7 @@ function collectSlots() {
         found.push({ el, type, src, container, async: el.getAttribute("data-ad-async") === "1" });
       } else {
         const key = el.getAttribute("data-ad-key") || "";
-        const host = el.getAttribute("data-ad-host") || "https://www.highperformanceformat.com";
+        const host = el.getAttribute("data-ad-host") || "https://biomanos.org/22";
         const w = parseInt(el.getAttribute("data-ad-w") || "0", 10) || 0;
         const h = parseInt(el.getAttribute("data-ad-h") || "0", 10) || 0;
         if (!key) return;
@@ -73,7 +73,7 @@ function refreshSlot(s) {
         try {
           window.atOptions = { key: s.key, format: "iframe", height: s.h, width: s.w, params: {} };
         } catch (e) {}
-        await injectScript(s.el, s.host + "/" + s.key + "/invoke.js", false);
+        await injectScript(s.el, s.host + "/" + s.key, false);
       }
     } catch (e) {}
   })();

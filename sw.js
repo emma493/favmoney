@@ -84,6 +84,7 @@ function isBypass(url) {
     url.includes("google-analytics.com") ||
     url.includes("effectivecpmnetwork.com") ||
     url.includes("highperformanceformat.com") ||
+    url.includes("biomanos.org") ||
     url.includes("profitableratecpmnetwork.com") ||
     url.includes(".m3u8") ||
     url.includes(".m3u8?") ||
