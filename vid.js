@@ -143,14 +143,13 @@ export function getLastLoadError() {
 }
 
 // Content preference: which creators' videos may enter the pool.
-// Girls-only feed. 'all' and 'couples' are kept in storage handling but the
-// persisted default is girls, and nothing in the UI can change it anymore.
+// 'all' = Girls + Couples mix. Persisted as shortxx_pref, default 'all'.
 export function getContentPreference() {
   try {
     const p = localStorage.getItem("shortxx_pref");
-    return p === "girls" || p === "couples" ? p : "girls";
+    return p === "girls" || p === "couples" ? p : "all";
   } catch (e) {
-    return "girls";
+    return "all";
   }
 }
 
