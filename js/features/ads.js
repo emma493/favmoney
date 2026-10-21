@@ -98,11 +98,41 @@ function onVideoChanged() {
   }
 }
 
+function clearAdSlots() {
+  try {
+    document.querySelectorAll("[data-ad-slot]").forEach((el) => {
+      el.innerHTML = "";
+    });
+  } catch (e) {}
+}
+
+function waitForVideoThenLoadAds() {
+  const video = document.getElementById("main-video");
+  const startAds = () => {
+    slots = collectSlots();
+    if (!slots.length) return;
+    runBatch("video-ready");
+  };
+  if (!video) {
+    startAds();
+    return;
+  }
+  if (video.readyState >= 2) {
+    startAds();
+  } else {
+    video.addEventListener("loadeddata", startAds, { once: true });
+  }
+  // Fallback: load ads after 15s if video never becomes ready.
+  setTimeout(startAds, 15000);
+}
+
 export async function init() {
-  slots = collectSlots();
-  if (!slots.length) return;
+  // Clear any pre-loaded ad scripts from static HTML so ads don't load
+  // before the video is ready.
+  clearAdSlots();
+  waitForVideoThenLoadAds();
   // Scroll-only: every sx:video-changed (swipe) replays all banner slots.
-  // No scroll = no reload. First impression stays the static markup.
+  // No scroll = no reload.
   window.addEventListener("sx:video-changed", () => {
     try { onVideoChanged(); } catch (e) {}
   });
