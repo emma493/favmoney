@@ -169,6 +169,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.addEventListener("sx:videos-error", (ev) => {
     try {
       const msg = String((ev && ev.detail && ev.detail.message) || "");
+      console.error("Database error:", msg);
       if (/permission|denied/i.test(msg)) {
         toast("Database blocked access — check Firestore rules");
       } else if (/unavailable|network|failed to get|failed to fetch|timeout/i.test(msg)) {
@@ -211,6 +212,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!didVideosLoad() || (err && getVideoCount() === 0)) {
         toast("Still connecting to database…");
         await window.sxRetryVideos();
+        if (!didVideosLoad() || getVideoCount() === 0) {
+          console.error("Database retry failed — reloading page");
+          location.reload();
+        }
       }
     } catch (e) {}
   }, 12000);
