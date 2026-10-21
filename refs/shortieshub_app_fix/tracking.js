@@ -1,5 +1,5 @@
 /**
- * tracking.js - Shortxx Video Data Engine (Reliable Views Fix)
+ * tracking.js - Favmoney Video Data Engine (Reliable Views Fix)
  */
 
 const firebaseConfig = {

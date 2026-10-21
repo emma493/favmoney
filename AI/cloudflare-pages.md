@@ -18,7 +18,7 @@ Add `_headers` file at root (do NOT put in AI/):
   Cache-Control: max-age=86400
 /*.mp4
   Access-Control-Allow-Origin: *
-/Shortxx.apk
+/Favmoney.apk
   Content-Type: application/vnd.android.package-archive
 ```
 
