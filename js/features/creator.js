@@ -4,7 +4,7 @@ import { store } from "../store.js";
 /* Live Cams destination opened by the "Join my Livestream" pill beside the
  * @username — same URL as the Live Cams nav icon. Single constant so
  * rotating the link later is a one-line change. */
-const LIVE_CAMS_URL = "https://www.profitableratecpmnetwork.com/hdw3m5up?key=5bddf30019234b583460ad791a8a095d";
+const LIVE_CAMS_URL = "https://araplhn.org/4/f4da12d7aaa67cd61f6a1196381da654";
 
 /* js/features/creator.js — guest mode: no profiles, no follow, no captions.
  * Paints like-count + hashtags only. @name is a plain non-clickable span. */

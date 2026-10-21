@@ -490,7 +490,7 @@ export async function init(ctx) {
         if (window.sxOpenTrending) window.sxOpenTrending("all");
       } else if (go === "live") {
         location.href =
-          "https://www.profitableratecpmnetwork.com/hdw3m5up?key=5bddf30019234b583460ad791a8a095d";
+          "https://araplhn.org/4/f4da12d7aaa67cd61f6a1196381da654";
       }
     }),
   );

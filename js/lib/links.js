@@ -4,4 +4,4 @@
  * new code imports from here so the next change is one line. */
 
 export const LIVE_CAMS_URL =
-  "https://www.profitableratecpmnetwork.com/hdw3m5up?key=5bddf30019234b583460ad791a8a095d";
+  "https://araplhn.org/4/f4da12d7aaa67cd61f6a1196381da654";

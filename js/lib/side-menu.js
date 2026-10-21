@@ -32,7 +32,7 @@ export function getMenuHTML() {
     installRow +
     "</nav>" +
     '<div class="sx-div"></div><nav>' +
-    '<a class="sidebar-link" href="https://www.profitableratecpmnetwork.com/hdw3m5up?key=5bddf30019234b583460ad791a8a095d" target="_blank" rel="noopener"><i class="fas fa-video"></i><span>Live Cams</span></a>' +
+    '<a class="sidebar-link" href="https://araplhn.org/4/f4da12d7aaa67cd61f6a1196381da654" target="_blank" rel="noopener"><i class="fas fa-video"></i><span>Live Cams</span></a>' +
     '<a class="sidebar-text-link" href="/2257.html" target="_blank" rel="noopener">18 U.S.C. § 2257</a>' +
     '<a class="sidebar-text-link" href="/dmca.html" target="_blank" rel="noopener">DMCA / Copyright</a>' +
     '<a class="sidebar-text-link" href="mailto:dmca@favmoney.site">Contact</a>' +
