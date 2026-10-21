@@ -69,7 +69,7 @@ function paintGrid() {
   pool.slice(0, 60).forEach((v) => {
     const cell = document.createElement("button");
     cell.className = "sx-rank";
-    cell.setAttribute("aria-label", "Play video by @" + (v.creator || "Shortxx"));
+    cell.setAttribute("aria-label", "Play video by @" + (v.creator || "Favmoney"));
     cell.innerHTML =
       '<span class="sx-rank-shimmer" aria-hidden="true"></span>' +
       thumbHTML(v, "") +
@@ -172,7 +172,7 @@ export async function init(ctx) {
     '<header class="sx-t-head"><div style="display:flex;align-items:center;gap:4px;">' +
     '<button class="sx-t-menu" data-menu aria-label="Open menu" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:none;background:none;color:#fff;cursor:pointer;">' +
     '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>' +
-    '<button class="sx-t-logo" data-home aria-label="Shortxx home">' + SVG.logo + 'Shortxx</button></div>' +
+    '<button class="sx-t-logo" data-home aria-label="Favmoney home">' + SVG.logo + 'Favmoney</button></div>' +
     '<form class="sx-t-search" role="search"><div class="sx-t-search-box">' + SVG.search +
     '<input placeholder="Search tags..." aria-label="Search tags" autocomplete="off" data-search /></div></form></header>' +
     '<aside class="sx-t-side" aria-label="Site navigation">' +

@@ -21,7 +21,7 @@ export function getMenuHTML() {
   return (
     '<div class="sx-sidebar-backdrop" data-close></div>' +
     '<aside class="sx-sidebar" aria-label="Site navigation">' +
-    '<div class="sx-sidebar-header"><div class="sx-sidebar-title">Shortxx</div>' +
+    '<div class="sx-sidebar-header"><div class="sx-sidebar-title">Favmoney</div>' +
     '<div class="sx-sidebar-actions">' +
     '<button class="sx-close-btn" data-close aria-label="Close menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div></div>' +
     '<nav>' +
@@ -75,13 +75,13 @@ export function wireMenu(root, deps) {
   if (installEl) {
     installEl.addEventListener("click", async () => {
       close();
-      const helper = window.ShortxxPWA;
+      const helper = window.FavmoneyPWA;
       try {
         if (helper && helper.canPrompt()) {
           const outcome = await helper.promptInstall();
           if (outcome === "accepted") {
             try { localStorage.setItem("shortxx_pwa_installed", "1"); } catch (e) {}
-            toast("Shortxx installed");
+            toast("Favmoney installed");
           }
         } else if (/iphone|ipad|ipod/i.test(navigator.userAgent || "")) {
           toast("iPhone: tap Share, then Add to Home Screen");

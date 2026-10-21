@@ -1,10 +1,5 @@
 # Netlify + Cloudflare Pages redirects. Publish directory must be the
 # favmoney.site/ folder itself so /ntok.css, /js/..., /discover/... resolve.
-# Link-preview shim: every og:image site-wide points at /og-preview.png,
-# which 302s to the CURRENT baked thumbnail published from Admin → Photo.
-# On publish, replace the target URL below with the new Cloudinary link.
-# (Edge functions are inactive on this host, so a static redirect carries it.)
-/og-preview.png  https://res.cloudinary.com/nonzehj3/image/upload/v1791353479/oocanaqa5xsa03hec57d.jpg  302
 /discover  /discover/  200
 /trending  /trending/  200
 /creators  /  301

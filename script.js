@@ -730,7 +730,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         shown++;
         const cell = document.createElement("button");
         cell.style.cssText = "position:relative;aspect-ratio:3/4;background:#121212;overflow:hidden;border:none;padding:0;";
-        const cellName = v.creator || "Shortxx";
+        const cellName = v.creator || "Favmoney";
         cell.setAttribute("aria-label", "Play video by @" + cellName);
         const thumb = v.posterUrl
           ? '<img src="' + esc(v.posterUrl) + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />'
@@ -840,7 +840,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       '<div class="sx-sidebar-backdrop" data-close></div>' +
       '<aside class="sx-sidebar" aria-label="Site navigation">' +
       '<div class="sx-sidebar-header">' +
-      '<div class="sx-sidebar-title">Shortxx</div>' +
+      '<div class="sx-sidebar-title">Favmoney</div>' +
       '<div class="sx-sidebar-actions">' +
       '<button class="sx-login-btn" data-login><i class="fas fa-sign-in-alt"></i><span data-auth-label>Log In</span></button>' +
       '<button class="sx-close-btn" data-close aria-label="Close menu">✕</button>' +
@@ -901,12 +901,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (installEl) {
       installEl.addEventListener("click", async () => {
         closeMenu();
-        const helper = window.ShortxxPWA;
+        const helper = window.FavmoneyPWA;
         if (helper && helper.canPrompt()) {
           const outcome = await helper.promptInstall();
           if (outcome === "accepted") {
             try { localStorage.setItem("shortxx_pwa_installed", "1"); } catch (e) {}
-            toast("Shortxx installed");
+            toast("Favmoney installed");
           }
         } else if (/iphone|ipad|ipod/i.test(navigator.userAgent || "")) {
           toast("iPhone: tap Share, then Add to Home Screen");

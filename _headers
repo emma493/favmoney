@@ -1,6 +1,3 @@
-/og-preview.png
-  Cache-Control: public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400
-  Access-Control-Allow-Origin: *
 /*.m3u8
   Access-Control-Allow-Origin: *
   Cache-Control: no-cache
@@ -9,7 +6,7 @@
   Cache-Control: max-age=86400
 /*.mp4
   Access-Control-Allow-Origin: *
-/Shortxx.apk
+/Favmoney.apk
   Content-Type: application/vnd.android.package-archive
 /js/*
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400

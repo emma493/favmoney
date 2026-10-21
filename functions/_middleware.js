@@ -30,7 +30,7 @@ const FIRESTORE_KEY = 'AIzaSyAcmxtdjT80jKyq4vuC0z6sd9AfS2zGE0w';
 const META_URL =
   `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)` +
   `/documents/site_config/og_preview?key=${FIRESTORE_KEY}&mask.fieldPaths=imageUrl`;
-const FALLBACK_IMG = 'https://favmoney.site/og-preview.png';
+const FALLBACK_IMG = 'https://favmoney.site/logo.png';
 
 function photoDocUrl(slug) {
   return (
@@ -55,9 +55,8 @@ async function previewImageUrl() {
     if (!res.ok) return FALLBACK_IMG;
     const doc = await res.json();
     const u = doc?.fields?.imageUrl?.stringValue || '';
-    // Only trust Cloudinary CDN URLs; anything else falls back to the
-    // redirect shim (which also serves legacy inline-byte docs + logo).
-    return /^https:\/\/res\.cloudinary\.com\//.test(u.trim()) ? u.trim() : FALLBACK_IMG;
+    // Always serve the logo; never a Cloudinary-baked thumbnail.
+    return FALLBACK_IMG;
   } catch {
     return FALLBACK_IMG;
   }
@@ -72,7 +71,8 @@ async function photoImageUrl(slug) {
     if (!res.ok) return FALLBACK_IMG;
     const doc = await res.json();
     const u = doc?.fields?.imageUrl?.stringValue || '';
-    return /^https:\/\/res\.cloudinary\.com\//.test(u.trim()) ? u.trim() : FALLBACK_IMG;
+    // Always serve the logo; never a Cloudinary-baked thumbnail.
+    return FALLBACK_IMG;
   } catch {
     return FALLBACK_IMG;
   }

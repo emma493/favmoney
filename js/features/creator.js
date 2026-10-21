@@ -36,7 +36,7 @@ export async function init() {
       const name =
         (current && typeof current.creator === "string" && current.creator.trim()) ||
         (typeof store.creator === "string" && store.creator.trim()) ||
-        "Shortxx";
+        "Favmoney";
       userNameElement.textContent = name;
     }
     const tags =

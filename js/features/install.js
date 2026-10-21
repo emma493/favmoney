@@ -23,13 +23,13 @@ export async function init(ctx) {
 
   btn.addEventListener("click", async (e) => {
     e.stopPropagation();
-    const helper = window.ShortxxPWA;
+    const helper = window.FavmoneyPWA;
     try {
       if (helper && helper.canPrompt()) {
         const outcome = await helper.promptInstall();
         if (outcome === "accepted") {
           try { localStorage.setItem("shortxx_pwa_installed", "1"); } catch (err) {}
-          toast("Shortxx installed");
+          toast("Favmoney installed");
           hide();
         }
       } else if (/iphone|ipad|ipod/i.test(navigator.userAgent || "")) {

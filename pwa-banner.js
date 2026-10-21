@@ -1,4 +1,4 @@
-/* Shortxx install banner — visible PWA install UI.
+/* Favmoney install banner — visible PWA install UI.
  * Shows a dismissible card above the bottom nav when the app is
  * installable but not yet installed. Android/desktop uses the captured
  * beforeinstallprompt; iOS (no prompt API) gets Share-menu instructions.
@@ -31,7 +31,7 @@
   if (Date.now() - dismissedAt < SNOOZE_MS) return;
 
   function canShow() {
-    return !!(window.__deferredInstallPrompt || (window.ShortxxPWA && window.ShortxxPWA.canPrompt()) || isIOS());
+    return !!(window.__deferredInstallPrompt || (window.FavmoneyPWA && window.FavmoneyPWA.canPrompt()) || isIOS());
   }
 
   // The prompt event can arrive late — poll briefly before giving up.
@@ -58,16 +58,16 @@
 
   function show() {
     if (document.getElementById("pwa-banner")) return;
-    var ios = isIOS() && !(window.__deferredInstallPrompt || (window.ShortxxPWA && window.ShortxxPWA.canPrompt()));
+    var ios = isIOS() && !(window.__deferredInstallPrompt || (window.FavmoneyPWA && window.FavmoneyPWA.canPrompt()));
     var el = document.createElement("div");
     el.id = "pwa-banner";
     el.setAttribute("role", "dialog");
-    el.setAttribute("aria-label", "Install Shortxx");
+    el.setAttribute("aria-label", "Install Favmoney");
     el.style.cssText = "position:fixed;left:12px;right:12px;bottom:calc(3.5rem + env(safe-area-inset-bottom,0px));z-index:85;max-width:456px;margin:0 auto;background:#1e1e1e;border:1px solid #2f2f2f;border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 32px rgba(0,0,0,0.6);";
     el.innerHTML =
       '<img src="icons/icon-192.png" alt="" style="width:44px;height:44px;border-radius:12px;flex:none;">' +
       '<div style="flex:1;min-width:0;">' +
-      '<div style="color:#fff;font-size:14px;font-weight:800;">Install Shortxx</div>' +
+      '<div style="color:#fff;font-size:14px;font-weight:800;">Install Favmoney</div>' +
       '<div data-sub style="color:#a0a0a0;font-size:12px;">' +
       (ios ? "iPhone: tap Share, then Add to Home Screen" : "Add to home screen for fullscreen clips") +
       "</div></div>" +
@@ -88,7 +88,7 @@
         dismiss();
         return;
       }
-      var helper = window.ShortxxPWA;
+      var helper = window.FavmoneyPWA;
       var outcome = helper ? await helper.promptInstall() : "unavailable";
       if (outcome === "accepted") {
         storeSet(INSTALLED_KEY, "1");

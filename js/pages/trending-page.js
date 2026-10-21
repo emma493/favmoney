@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     pool.slice(0, 60).forEach((v) => {
       const cell = document.createElement("button");
       cell.className = "sx-rank";
-      cell.setAttribute("aria-label", "Play video by @" + (v.creator || "Shortxx"));
+      cell.setAttribute("aria-label", "Play video by @" + (v.creator || "Favmoney"));
       cell.innerHTML = thumbHTML(v, "") +
         '<span class="sx-rank-cap"><div>' + esc(formatCount(v.views)) + "</div><div>" + esc(formatCount(v.likes)) + "</div></span>";
       cell.addEventListener("click", () => {

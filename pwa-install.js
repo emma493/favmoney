@@ -1,4 +1,4 @@
-/* Shortxx PWA bootstrap: registers the service worker and exposes a
+/* Favmoney PWA bootstrap: registers the service worker and exposes a
  * one-shot install prompter consumed by the install banner UI
  * (pwa-banner.js). The native prompt is only ever fired from an explicit
  * user tap on that banner — never automatically. */
@@ -6,11 +6,11 @@
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker.register("/sw.js")
-        .catch((err) => console.warn("Shortxx Service Worker registration failed:", err));
+        .catch((err) => console.warn("Favmoney Service Worker registration failed:", err));
     });
   }
 
-  window.ShortxxPWA = {
+  window.FavmoneyPWA = {
     canPrompt() {
       return !!window.__deferredInstallPrompt;
     },

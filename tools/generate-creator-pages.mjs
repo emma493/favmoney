@@ -38,7 +38,7 @@ function bake(template, name) {
   const desc = `Watch @${name}'s short videos on Favmoney.`;
   let out = template;
   out = out.replace(
-    "<title>Creator | Shortxx</title>",
+    "<title>Creator | Favmoney</title>",
     `<title>${title}</title>\n  <!-- Generated for @${name} by tools/generate-creator-pages.mjs — do not hand-edit; edit creator/index.html + re-run. -->`
   );
   out = out.replace(
